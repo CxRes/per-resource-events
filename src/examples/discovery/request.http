@@ -1,0 +1,2 @@
+HEAD /foo HTTP/1.1
+Host: example.org

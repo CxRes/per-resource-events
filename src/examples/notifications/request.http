@@ -1,0 +1,7 @@
+GET /foo HTTP/1.1
+Host: example.org
+Authorization: DPoP <token>
+DPoP: <proof>
+Last-Event-ID: *
+Accept-Encoding: gzip
+Accept-Events: PREP; accept=message/rfc822; accept-encoding=identity

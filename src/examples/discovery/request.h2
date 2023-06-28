@@ -1,0 +1,7 @@
+HEADERS
+  + END_HEADERS
+  + END_STREAM
+    :method = HEAD
+    :scheme = https
+    :authority = example.org
+    :path = /foo

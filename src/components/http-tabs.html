@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.1.0/dist/themes/light.css" />
+
+<script type="module">
+/* eslint-disable import/no-extraneous-dependencies,import/no-unresolved */
+import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.1.0/dist/components/tab/tab.js'
+import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.1.0/dist/components/tab-group/tab-group.js'
+import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.1.0/dist/components/tab-panel/tab-panel.js'
+// import { setBasePath } from 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.1.0/dist/utilities/base-path.js'
+import { html, css, LitElement } from 'https://unpkg.com/lit?module'
+
+// setBasePath('https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.1.0/dist/')
+
+customElements.define('prep-http-tabs', class extends LitElement {
+  firstUpdated() {
+    requestAnimationFrame(() => {
+      this.renderRoot.querySelector('sl-tab-group').show('http2')
+    })
+  }
+
+  static styles = css`
+    sl-tab-panel::part(base) {
+      padding: 0;
+    }
+  `
+
+  render() {
+    return html`
+      <sl-tab-group>
+        <sl-tab slot="nav" panel="http">
+          HTTP/1.1
+        </sl-tab>
+        <sl-tab slot="nav" panel="http2" active>
+          HTTP/2
+        </sl-tab>
+
+        <sl-tab-panel name="http">
+          <slot name="http"></slot>
+        </sl-tab-panel>
+
+        <sl-tab-panel name="http2">
+          <slot name="http2"></slot>
+        </sl-tab-panel>
+      </sl-tab-group>
+    `
+  }
+})
+</script>

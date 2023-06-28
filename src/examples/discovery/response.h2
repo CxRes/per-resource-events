@@ -1,0 +1,6 @@
+HEADERS
+  + END_HEADERS
+  + END_STREAM
+    :status = 304
+    accept = text/html
+    accept-events: PREP; accept=message/rfc822

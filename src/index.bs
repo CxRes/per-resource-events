@@ -1,0 +1,151 @@
+<pre class="metadata">
+Title: Per Resource Events Protocol
+Favicon: https://www.w3.org/2008/site/images/star.png
+Shortname: PREP
+Level: 1
+Status: w3c/ED
+ED: https://cxres.github.io/per-resource-events/protocol
+Repository: cxres/per-resource-events
+Inline Github Issues: title
+Markup Shorthands: markdown yes, biblio yes, css no
+Boilerplate: issues-index no, conformance no, index no, logo no
+Local Boilerplate: copyright yes
+Block Elements: prep-html-tabs
+Text Macro: PROTOCOL <span class="title">Per Resource Events Protocol</span>
+  PREP <span class="shortname">PREP</span>
+Max ToC Depth: 2
+Indent: 2
+Editor: Rahul Gupta, https://cxres.pages.dev/profile/#i
+!Author: <a href="https://cxres.pages.dev/profile/#i">Rahul Gupta</a>
+Abstract:
+  Per Resource Events is a minimal protocol built on top of HTTP that allows clients to receive notifications directly from any resource of interest in a secure manner.
+
+  The Per Resource Events Protocol is predicated on the idea that the most intuitive source for notifications about changes made to a resource is the resource itself.
+Status Text:
+  This section describes the status of this document at the time of its publication.
+
+  The information in this document is still subject to change. You are invited to contribute any feedback, comments, or questions you might have.
+
+  This is a draft document and may be updated, replaced or obsoleted by other documents at any time. It is inappropriate to cite this document as other than work in progress.
+</pre>
+
+<style>
+  body {
+    background-image: none;
+  }
+
+  .v-space {
+    padding: 4px;
+  }
+
+  .example > span.marker {
+    text-transform: none;
+  }
+
+  prep-http-tabs pre.include-code {
+    margin: 0;
+    padding: 0.5em 1em 0.25em;
+  }
+</style>
+
+<pre class="include">
+  path: boilerplate/conformance.md
+</pre>
+
+<pre class="include">
+  path: sections/conformance.md
+</pre>
+
+<pre class="include">
+  path: sections/introduction.md
+</pre>
+
+<pre class="include">
+  path: sections/design.md
+</pre>
+
+<pre class="include">
+  path: sections/terminology.md
+</pre>
+
+<pre class="include">
+  path: sections/headers.md
+</pre>
+
+<pre class="include">
+  path: sections/protocol.md
+</pre>
+
+<pre class="include">
+  path: sections/discovery.md
+</pre>
+
+<pre class="include">
+  path: sections/request.md
+</pre>
+
+<pre class="include">
+  path: sections/response-1.md
+</pre>
+
+<pre class="include">
+  path: sections/response-2.md
+</pre>
+
+<!--
+  <pre class="include">
+    path: sections/optimizations.md
+  </pre>
+-->
+
+<pre class="include">
+  path: sections/rfc822.md
+</pre>
+
+<pre class="include">
+  path: boilerplate/considerations.md
+</pre>
+
+<pre class="include-raw">
+  path: components/http-tabs.html
+</pre>
+
+<pre class="biblio">
+{
+  "STRUCTURED-FIELDS": {
+    "authors": [
+      "Mark Nottingham",
+      "Poul-Henning Kamp"
+    ],
+    "href": "https://datatracker.ietf.org/doc/draft-ietf-httpbis-sfbis/02/",
+    "title": "Structured Field Values for HTTP",
+    "status": "Internet Draft",
+    "publisher": "IETF",
+    "deliveredBy": [
+      "https://httpwg.org/"
+    ]
+  },
+  "RETROFIT-FIELDS": {
+    "note": "Work in Progress",
+    "authors": [
+      "Mark Nottingham"
+    ],
+    "href": "https://datatracker.ietf.org/doc/draft-ietf-httpbis-retrofit/06/",
+    "title": "Retrofit Structured Fields for HTTP",
+    "status": "Internet Draft",
+    "publisher": "IETF",
+    "deliveredBy": [
+      "https://httpwg.org/"
+    ]
+  },
+  "REST": {
+    "authors": [
+      "Roy Thomas Fielding"
+    ],
+    "href": "https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm",
+    "title": "Architectural styles and the design of network-based software architectures",
+    "publisher": "University of California",
+    "date": "2000"
+  }
+}
+</pre>

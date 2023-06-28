@@ -1,0 +1,15 @@
+HEADERS
+  + END_STREAM
+  - END_HEADERS
+    :method = GET
+    :scheme = https
+    :authority = example.org
+    :path = /foo
+
+CONTINUATION
+  + END_HEADERS
+    authorization = DPoP <token>
+    DPoP = <proof>
+    last-event-id = *
+    accept-encoding = gzip
+    accept-events = PREP; accept=message/rfc822; accept-encoding=identity

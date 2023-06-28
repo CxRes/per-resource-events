@@ -1,0 +1,24 @@
+HEADERS
+  + END_HEADERS
+  - END_STREAM
+    :status = 304
+    vary = accept-events, last-event-id
+    accept-events = PREP; accept=message/rfc822
+    events = protocol=PREP, status=200, vary=accept-encoding
+    last-modified = Sat, 1 April 2023 10:11:12 GMT
+    etag = 1234abcd
+    content-type = multipart/digest; boundary=next-message
+
+DATA
+  - END_STREAM
+--next-message
+
+DATA
+  - END_STREAM
+content-type = message/rfc822
+CRLF<message>
+--next-message
+
+DATA
+  + END_STREAM
+--next-message-- 

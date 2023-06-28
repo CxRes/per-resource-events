@@ -1,0 +1,35 @@
+HEADERS
+  + END_HEADERS
+  - END_STREAM
+    :status = 304
+    vary = accept-events
+    accept-events = PREP; accept=message/rfc822
+    events = protocol=PREP, status=200, vary=accept-encoding
+    last-modified = Sat, 1 April 2023 10:11:12 GMT
+    etag = 1234abcd
+    content-type = multipart/mixed; boundary=main-boundary
+
+DATA
+  - END STREAM
+--main-boundary
+Content-Type: text/html
+CRLF
+<html>
+--main-boundary
+
+DATA
+  - END STREAM
+Content-Type: multipart/digest; boundary=next-message
+CRLF
+--next-message
+
+DATA
+  - END STREAM
+Content-Type: message/rfc822
+CRLF<message>
+--next-message
+
+DATA
+  + END STREAM
+--next-message--
+--main-boundary-- 
