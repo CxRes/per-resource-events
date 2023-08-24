@@ -4,6 +4,24 @@
 
 The [PROTOCOL] defines a minimal HTTP-based framework by which clients can securely receive update notifications directly from any resource of interest on the Open Web Platform.
 
+## Motivation ## {#motivation}
+
+*This section is non-normative.*
+
+HTTP was originally designed to transfer a static documents within a single request and response. If the document changes, HTTP does not automatically update clients with the new versions. This design was adequate for web pages that were mostly static and written by hand.
+
+But web-applications today are dynamic. They provide (near-)instantaneous updates across multiple clients and servers. The many workarounds developed over the years to provide real-time updates over HTTP have often proven to be inadequate. Web programmers instead resort to implementing custom messaging systems over alternate protocols such as WebSockets, which requires additional layers of code in the form of non-standard JavaScript frameworks to synchronize changes of state.
+
+Per Resource Events is a minimal protocol built on top of HTTP that allows clients to receive notifications directly from a resource of interest. Unlike other HTTP based solutions, [PROTOCOL] supports the use of arbitrary media-types for notifications, which can be negotiated just like representations; thus giving implementers a lot of flexibility to customize notifications according to the needs of their application.
+
+## How it Works ## {#how-it-works}
+
+*This section is non-normative.*
+
+A client application that wishes to receive notifications about updates to a resource simply places a `GET` request on that resource with just one additional `Accept-Events` header. The server responds by sending, first the current representation of the resource (though a client can request for this to be skipped), followed by notifications sent in response to resource events as parts of a multipart response while the request is open.
+
+If a server does not implement the [PROTOCOL], the `Accept Events` header in a `GET` request is simply ignored. The resource returns the current representation thereby preserving backwards compatibility.
+
 ## Scope ## {#scope}
 
 *This section is non-normative.*
