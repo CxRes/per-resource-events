@@ -43,7 +43,7 @@ A [=resource server=] providing notifications using the [PROTOCOL]:
 
 An [=application client=] requesting only notifications using the [PROTOCOL] needs to explicitly opt out of receiving the [=base response=] as described in [[#request]].
 
-A [=resource server=] MUST NOT send the [[=base response=]], if the request for [PREP] notifications includes the `Last-Event-ID` header field([[!EVENTSOURCE]] [[EVENTSOURCE#section-9.2.4|§ 9.2.4 The `Last-Event-ID` header]]) which matches the `Event-ID` of the last event on the resource.
+A [=resource server=] MUST NOT send the [[=base response=]], if the request for [PREP] notifications includes the `Last-Event-ID` header field ([[!EVENTSOURCE]] [[EVENTSOURCE#section-9.2.4|§ 9.2.4 The `Last-Event-ID` header]]) which matches the `Event-ID` of the last event on the resource.
 
 ### Headers ### {#only-notifications-response-headers}
 
