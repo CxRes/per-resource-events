@@ -117,7 +117,7 @@ Status Text:
       "Mark Nottingham",
       "Poul-Henning Kamp"
     ],
-    "href": "https://datatracker.ietf.org/doc/draft-ietf-httpbis-sfbis/02/",
+    "href": "https://datatracker.ietf.org/doc/draft-ietf-httpbis-sfbis/03/",
     "title": "Structured Field Values for HTTP",
     "status": "Internet Draft",
     "publisher": "IETF",

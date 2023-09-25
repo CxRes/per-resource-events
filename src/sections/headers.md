@@ -38,7 +38,7 @@ A recipient MUST ignore the protocols specified in the [:Accept-Events:] header 
 
 ### Syntax ### {#accept-events-header-syntax}
 
-[:Accept-Events:] is a List structured ([[!STRUCTURED-FIELDS]] [[RFC8941#section-3.1|§ 3.1 Lists]]) header field. Its members MUST be of type string that identifies a notification protocol. A protocol identifier MAY be followed with zero or more parameters defined by the given protocol, which MAY be followed by a [:q:] parameter.
+[:Accept-Events:] is a List structured ([[!STRUCTURED-FIELDS]] [[STRUCTURED-FIELDS#section-3.1|§ 3.1 Lists]]) header field. Its members MUST be of type string that identifies a notification protocol. A protocol identifier MAY be followed with zero or more parameters defined by the given protocol, which MAY be followed by a [:q:] parameter.
 
 ISSUE: Could the protocol identifier be a URL?
 
@@ -76,4 +76,4 @@ Such as:
 
 ### Syntax ### {#events-header-syntax}
 
-[:Events:] is a Dictionary structured ([[!STRUCTURED-FIELDS]] [[STRUCTURED-FIELDS#section-3.1|§ 3.1 Dictionaries]]) header field. It MUST contain one member with the key `protocol` whose value identifies the notification protocol used in the response. It MAY contain other members that are defined by the given notification protocol.
+[:Events:] is a Dictionary structured ([[!STRUCTURED-FIELDS]] [[STRUCTURED-FIELDS#section-3.2|§ 3.2 Dictionaries]]) header field. It MUST contain one member with the key `protocol` whose value identifies the notification protocol used in the response. It MAY contain other members that are defined by the given notification protocol.
