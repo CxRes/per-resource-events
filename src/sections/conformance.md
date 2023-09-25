@@ -5,10 +5,10 @@ The [PROTOCOL] identifies the following Classes of Products for conforming imple
 <dl>
 
   : <dfn>Resource Server</dfn>
-  :: A *resource server* that builds on HTTP Origin Server ([[!RFC9110]] [[RFC9110#section-3.6|§ 3.6 Origin Server]]) by defining header fields ([[!RFC9110]] [[RFC9110#section-6.3|§ 6.3 Header Fields]]) and media types ([[!RFC9110]] [[RFC9110#section-8.3.1|§ 8.3.1 Media Types]]).
+  :: A *resource server* that builds on HTTP origin server ([[!RFC9110]] [[RFC9110#section-3.6|§ 3.6 Origin Server]]) by defining header fields ([[!RFC9110]] [[RFC9110#section-6.3|§ 6.3 Header Fields]]) and media types ([[!RFC9110]] [[RFC9110#section-8.3.1|§ 8.3.1 Media Types]]).
 
   : <dfn>Application Client</dfn>
-  :: An *application client* that builds on HTTP User Agent ([[!RFC9110]] [[RFC9110#section-3.5|§ 3.5 User Agents]]) by defining behaviour in terms of fetching [[!FETCH]] across the platform.
+  :: An *application client* that builds on HTTP user Aagent ([[!RFC9110]] [[RFC9110#section-3.5|§ 3.5 User Agents]]) by defining behaviour in terms of fetching [[!FETCH]] across the platform.
 
 </dl>
 

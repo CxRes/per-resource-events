@@ -14,7 +14,7 @@ This specification restricts [:Accept-Events:] and [:Events:] as Structured head
 
 For the [PROTOCOL], `HEAD` ([[!RFC9110]] [[RFC9110#section-9.3.2|§ 9.3.2 HEAD]]) and `GET` ([[!RFC9110]] [[RFC9110#section-9.3.1|§ 9.3.1 GET]]) are the only methods in response to which notifications are advertised.
 
-A [=Resource Server=] MUST NOT send the [:Accept-Events:] header field with `PREP` as a protocol in response to a request with any method other than `HEAD` or `GET`.
+A [=resource server=] MUST NOT send the [:Accept-Events:] header field with `PREP` as a protocol in response to a request with any method other than `HEAD` or `GET`.
 
 For the [PROTOCOL], `GET` ([[!RFC9110]] [[RFC9110#section-9.3.1|§ 9.3.1 GET]]) is the only method by which notifications are requested and for which notifications response is defined.
 
@@ -22,7 +22,7 @@ An [=application client=] MUST NOT send the [:Accept-Events:] header field with 
 
 An [=resource server=] MUST NOT send the [:Events:] header field with the parameter `protocol` with a value of `PREP` in response to a request with any method other than `GET`.
 
-A [=Resource Server=] MUST NOT send the [:Events:] header field except in response to a `GET` request.
+A [=resource server=] MUST NOT send the [:Events:] header field except in response to a `GET` request.
 
 ## Status Codes ## {#status-codes}
 

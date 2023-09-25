@@ -7,7 +7,7 @@ In order to receive notifications using the [PROTOCOL] from a resource, an [=app
 + MUST include the [:Accept-Events:] header field, which:
   + MUST list `PREP` as a preferred notification protocol.
     + MAY include zero or more [=event fields=]. For example, [=application clients=] MAY specify an `accept` [=event field=] to indicate a preferred media-type for notifications.
-+ MAY include the `Last-Event-ID` header field ([[!EVENTSOURCE]] [[EVENTSOURCE#section-9.2.4|§ 9.2.4  The `Last-Event-ID` header]]) requesting the [=Resource Server=] to not send the [=base response=] body and resume notifications from the event occurring immediately after the one specified.
++ MAY include the `Last-Event-ID` header field ([[!EVENTSOURCE]] [[EVENTSOURCE#section-9.2.4|§ 9.2.4  The `Last-Event-ID` header]]) requesting the [=resource server=] to not send the [=base response=] body and resume notifications from the event occurring immediately after the one specified.
 
 <div class="advisement">
   <div class="marker">Implementation Guidance</div>

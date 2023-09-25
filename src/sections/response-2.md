@@ -119,7 +119,7 @@ Where the response includes a [=base response=] body prior to [PREP] notificatio
 
 A [=resource server=] MUST end the notification response in any one of the following scenarios:
 
-+ Once the time specified in the `Expires` parameter of the `Events` header field has elapsed.
++ Once the time specified in the `expires` parameter of the `Events` header field has elapsed.
 + Immediately after sending a notification upon a `DELETE` request on the resource that results in a response with 200 (OK) ([[!RFC9110]] [[RFC9110#section-15.3.1|§ 15.3.1 200 OK]]) or 204 (No Content) ([[!RFC9110]] [[RFC9110#section-15.3.5|§ 15.3.5 204 No Content]]) status codes.
 
 A [=resource server=] MUST properly terminate the multipart response as defined in [[!RFC2046]] [[RFC2046#section-5.1.2|§ 5.1 Multipart Media Type > § 5.1.2 Common Syntax]], before closing the notification response stream.
