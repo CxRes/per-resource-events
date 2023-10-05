@@ -5,10 +5,10 @@
   <title>Per Resource Events Protocol</title>
   <meta content="w3c/ED" name="w3c-status">
   <link href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED" rel="stylesheet">
-  <meta content="Bikeshed version 6edc88947, updated Thu Aug 17 11:18:09 2023 -0700" name="generator">
+  <meta content="Bikeshed version 82ce88815, updated Thu Sep 7 16:33:55 2023 -0700" name="generator">
   <link href="https://cxres.github.io/per-resource-events/protocol" rel="canonical">
   <link href="https://www.w3.org/2008/site/images/star.png" rel="icon">
-  <meta content="3c3db369066592acffb9b8244326e851f7c070e2" name="document-revision">
+  <meta content="4370e104e7cd47e939ea1a5427bfa6f0be395d6c" name="document-revision">
 <style>
   body {
     background-image: none;
@@ -607,7 +607,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
  <body class="h-entry">
   <div class="head">
    <h1 class="p-name no-ref" id="title">Per Resource Events Protocol</h1>
-   <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">Editor’s Draft</a>, <time class="dt-updated" datetime="2023-08-24">24 August 2023</time></p>
+   <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">Editor’s Draft</a>, <time class="dt-updated" datetime="2023-10-05">5 October 2023</time></p>
    <details open>
     <summary>More details about this document</summary>
     <div data-fill-with="spec-metadata">
@@ -758,10 +758,10 @@ appear in all capitals, as shown here.</p>
    <dl>
     <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="resource-server">Resource Server</dfn>
     <dd data-md>
-     <p>A <em>resource server</em> that builds on HTTP Origin Server (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-3.6">§ 3.6 Origin Server</a>) by defining header fields (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-6.3">§ 6.3 Header Fields</a>) and media types (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-8.3.1">§ 8.3.1 Media Types</a>).</p>
+     <p>A <em>resource server</em> that builds on HTTP origin server (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-3.6">§ 3.6 Origin Server</a>) by defining header fields (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-6.3">§ 6.3 Header Fields</a>) and media types (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-8.3.1">§ 8.3.1 Media Types</a>).</p>
     <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="application-client">Application Client</dfn>
     <dd data-md>
-     <p>An <em>application client</em> that builds on HTTP User Agent (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-3.5">§ 3.5 User Agents</a>) by defining behaviour in terms of fetching <a data-link-type="biblio" href="#biblio-fetch" title="Fetch Standard">[FETCH]</a> across the platform.</p>
+     <p>An <em>application client</em> that builds on HTTP user Aagent (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-3.5">§ 3.5 User Agents</a>) by defining behaviour in terms of fetching <a data-link-type="biblio" href="#biblio-fetch" title="Fetch Standard">[FETCH]</a> across the platform.</p>
    </dl>
    <h3 class="heading settled" id="interoperability"><span class="content">Interoperability</span></h3>
    <p>Interoperability occurs between <a href="#application-client—resource-server-interoperability" id="ref-for-application-client—resource-server-interoperability">Application Client—Resource Server</a> as defined by the <span class="title">Per Resource Events Protocol</span>.</p>
@@ -846,7 +846,7 @@ appear in all capitals, as shown here.</p>
    </ul>
    <h3 class="heading settled" data-level="2.4" id="known-limitations"><span class="secno">2.4. </span><span class="content">Known Limitations</span><a class="self-link" href="#known-limitations"></a></h3>
    <p><em>This section is non-normative.</em></p>
-   <p>The <span class="title">Per Resource Events Protocol</span> only allows notifications to be sent for events on a given resource. It is not possible for resources to send notifications for arbitrary events such as state changes on multiple resources or combinations thereof. Implementations using <span class="title">Per Resource Events Protocol</span> have to create separate resources to realize such notification endpoints. But this is no different from APIs built on top of existing messaging protocols (See, for example, <a data-link-type="biblio" href="#biblio-websockets" title="WebSockets Standard">[WEBSOCKETS]</a>, <a data-link-type="biblio" href="#biblio-websub" title="WebSub">[WEBSUB]</a>, <a data-link-type="biblio" href="#biblio-eventsource" title="Server-Sent Events">[EVENTSOURCE]</a>).</p>
+   <p>The <span class="title">Per Resource Events Protocol</span> only allows notifications to be sent for events on a given resource. It is not possible for resources to send notifications for arbitrary events such as state changes on multiple resources or combinations thereof. Implementations using <span class="title">Per Resource Events Protocol</span> have to create separate resources to realize such notification endpoints. But this is no different from APIs built on top of existing messaging protocols (See, for example, <a data-link-type="biblio" href="#biblio-websockets" title="WebSockets Standard">[WEBSOCKETS]</a> and <a data-link-type="biblio" href="#biblio-websub" title="WebSub">[WEBSUB]</a>).</p>
    <p>Due to the limits on connections per domain, the <span class="title">Per Resource Events Protocol</span> is not suitable for use with HTTP/1.1, especially when providing notifications for multiple resource from the same domain that might be accessed simultaneously. This limitation is identical to that of other HTTP based streaming based protocols such as Server-Sent Events <a data-link-type="biblio" href="#biblio-eventsource" title="Server-Sent Events">[EVENTSOURCE]</a>. Implementations are strongly encouraged to adopt HTTP/2 (or later) and implement mitigation strategies, such as to maximize the number of concurrent connections and to provide alternate locations for resources on different domains.</p>
    <h2 class="heading settled" data-level="3" id="terminology"><span class="secno">3. </span><span class="content">Terminology</span><a class="self-link" href="#terminology"></a></h2>
    <dl>
@@ -884,7 +884,7 @@ appear in all capitals, as shown here.</p>
    </div>
    <p>A recipient MUST ignore the protocols specified in the <span>`<code><a data-link-type="http-header" href="#accept-events-header" id="ref-for-accept-events-header①⓪">Accept-Events</a></code>`</span> header field that they are not aware of.</p>
    <h4 class="heading settled" data-level="4.1.2" id="accept-events-header-syntax"><span class="secno">4.1.2. </span><span class="content">Syntax</span><a class="self-link" href="#accept-events-header-syntax"></a></h4>
-   <p><span>`<code><a data-link-type="http-header" href="#accept-events-header" id="ref-for-accept-events-header①①">Accept-Events</a></code>`</span> is a List structured (<a data-link-type="biblio" href="#biblio-structured-fields" title="Structured Field Values for HTTP">[STRUCTURED-FIELDS]</a> <a href="https://www.rfc-editor.org/rfc/rfc8941#section-3.1">§ 3.1 Lists</a>) header field. Its members MUST be of type string that identifies a notification protocol. A protocol identifier MAY be followed with zero or more parameters defined by the given protocol, which MAY be followed by a <span>`<code><a data-link-type="http-header">q</a></code>`</span> parameter.</p>
+   <p><span>`<code><a data-link-type="http-header" href="#accept-events-header" id="ref-for-accept-events-header①①">Accept-Events</a></code>`</span> is a List structured (<a data-link-type="biblio" href="#biblio-structured-fields" title="Structured Field Values for HTTP">[STRUCTURED-FIELDS]</a> <a href="https://datatracker.ietf.org/doc/draft-ietf-httpbis-sfbis/03/#section-3.1">§ 3.1 Lists</a>) header field. Its members MUST be of type string that identifies a notification protocol. A protocol identifier MAY be followed with zero or more parameters defined by the given protocol, which MAY be followed by a <span>`<code><a data-link-type="http-header">q</a></code>`</span> parameter.</p>
    <p class="issue" id="issue-61bfc96f"><a class="self-link" href="#issue-61bfc96f"></a> Could the protocol identifier be a URL?</p>
    <p class="issue" id="issue-e3fb2d54"><a class="self-link" href="#issue-e3fb2d54"></a> If the protocol is an identifier, do we need to define a registry?</p>
    <p>The <dfn data-dfn-type="http-header" data-export id="http-headerdef-q">`q`<a class="self-link" href="#http-headerdef-q"></a></dfn> parameter assigns a relative "weight" to the sender’s preference for a notification protocol with semantics as defined in <a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-12.4.2">§ 12.4.2 Quality Values</a>. Senders using weights SHOULD send <span>`<code><a data-link-type="http-header">q</a></code>`</span> last (after all protocol parameters). Recipients SHOULD process any parameter named <span>`<code><a data-link-type="http-header">q</a></code>`</span> as weight, regardless of parameter ordering.</p>
@@ -899,14 +899,14 @@ appear in all capitals, as shown here.</p>
    <p>If the response contains a <span>`<code><a data-link-type="http-header" href="#events-header" id="ref-for-events-header⑥">Events</a></code>`</span> header field that the recipient does not understand or the <span>`<code><a data-link-type="http-header" href="#events-header" id="ref-for-events-header⑦">Events</a></code>`</span> header field specifies a `protocol` that the recipient does not understand, the recipient MUST NOT process the response. A proxy that receives such a message SHOULD forward it downstream.</p>
    <p class="issue" id="issue-e5765590"><a class="self-link" href="#issue-e5765590"></a> Could the constraints on the <span>`<code><a data-link-type="http-header" href="#events-header" id="ref-for-events-header⑧">Events</a></code>`</span> field not being understood be more specific? <br> <br> Such as: <br> "A recipient MUST ignore the <span>`<code><a data-link-type="http-header" href="#events-header" id="ref-for-events-header⑨">Events</a></code>`</span> header field received in response to a request method that is unrecognized or for which notifications response is not defined for a particular notifications protocol."</p>
    <h4 class="heading settled" data-level="4.2.2" id="events-header-syntax"><span class="secno">4.2.2. </span><span class="content">Syntax</span><a class="self-link" href="#events-header-syntax"></a></h4>
-   <p><span>`<code><a data-link-type="http-header" href="#events-header" id="ref-for-events-header①⓪">Events</a></code>`</span> is a Dictionary structured (<a data-link-type="biblio" href="#biblio-structured-fields" title="Structured Field Values for HTTP">[STRUCTURED-FIELDS]</a> <a href="https://datatracker.ietf.org/doc/draft-ietf-httpbis-sfbis/02/#section-3.1">§ 3.1 Dictionaries</a>) header field. It MUST contain one member with the key `protocol` whose value identifies the notification protocol used in the response. It MAY contain other members that are defined by the given notification protocol.</p>
+   <p><span>`<code><a data-link-type="http-header" href="#events-header" id="ref-for-events-header①⓪">Events</a></code>`</span> is a Dictionary structured (<a data-link-type="biblio" href="#biblio-structured-fields" title="Structured Field Values for HTTP">[STRUCTURED-FIELDS]</a> <a href="https://datatracker.ietf.org/doc/draft-ietf-httpbis-sfbis/03/#section-3.2">§ 3.2 Dictionaries</a>) header field. It MUST contain one member with the key `protocol` whose value identifies the notification protocol used in the response. It MAY contain other members that are defined by the given notification protocol.</p>
    <h2 class="heading settled" data-level="5" id="protocol"><span class="secno">5. </span><span class="content">Protocol</span><a class="self-link" href="#protocol"></a></h2>
    <h3 class="heading settled" data-level="5.1" id="event-fields"><span class="secno">5.1. </span><span class="content">Event Fields</span><a class="self-link" href="#event-fields"></a></h3>
    <p>The <span class="title">Per Resource Events Protocol</span> reuses existing HTTP fields (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-5">§ 5 Fields</a>) as event fields. Any HTTP field MAY be used as an <a data-link-type="dfn" href="#event-field" id="ref-for-event-field">event field</a>. For the limited context of notifications using the <span class="title">Per Resource Events Protocol</span>, an <a data-link-type="dfn" href="#event-field" id="ref-for-event-field①">event field</a> with the same name as an HTTP field MUST have identical semantics to that HTTP field, unless otherwise specified.</p>
    <p>This specification restricts <span>`<code><a data-link-type="http-header" href="#accept-events-header" id="ref-for-accept-events-header①⑤">Accept-Events</a></code>`</span> and <span>`<code><a data-link-type="http-header" href="#events-header" id="ref-for-events-header①①">Events</a></code>`</span> as Structured header fields <a data-link-type="biblio" href="#biblio-structured-fields" title="Structured Field Values for HTTP">[STRUCTURED-FIELDS]</a>. From this it follows:</p>
    <ul>
     <li data-md>
-     <p>An event field whose value is anything except an item without parameters MUST be specified in an Inner List (<a data-link-type="biblio" href="#biblio-structured-fields" title="Structured Field Values for HTTP">[STRUCTURED-FIELDS]</a> <a href="https://datatracker.ietf.org/doc/draft-ietf-httpbis-sfbis/02/#section-3.1.1">§ 3.1.1 Inner List</a>).</p>
+     <p>An event field whose value is anything except an item without parameters MUST be specified in an Inner List (<a data-link-type="biblio" href="#biblio-structured-fields" title="Structured Field Values for HTTP">[STRUCTURED-FIELDS]</a> <a href="https://datatracker.ietf.org/doc/draft-ietf-httpbis-sfbis/03/#section-3.1.1">§ 3.1.1 Inner List</a>).</p>
     <li data-md>
      <p>Unless otherwise specified, an <a data-link-type="dfn" href="#event-field" id="ref-for-event-field②">event field</a> that is not already defined as a Structured Field, therefore, MUST be handled as a Retrofit Structured Field <a data-link-type="biblio" href="#biblio-retrofit-fields" title="Retrofit Structured Fields for HTTP">[RETROFIT-FIELDS]</a> when such handling is defined.</p>
     <li data-md>
@@ -914,11 +914,11 @@ appear in all capitals, as shown here.</p>
    </ul>
    <h3 class="heading settled" data-level="5.2" id="methods"><span class="secno">5.2. </span><span class="content">Methods</span><a class="self-link" href="#methods"></a></h3>
    <p>For the <span class="title">Per Resource Events Protocol</span>, `HEAD` (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-9.3.2">§ 9.3.2 HEAD</a>) and `GET` (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-9.3.1">§ 9.3.1 GET</a>) are the only methods in response to which notifications are advertised.</p>
-   <p>A <a data-link-type="dfn" href="#resource-server" id="ref-for-resource-server⑤">Resource Server</a> MUST NOT send the <span>`<code><a data-link-type="http-header" href="#accept-events-header" id="ref-for-accept-events-header①⑥">Accept-Events</a></code>`</span> header field with `PREP` as a protocol in response to a request with any method other than `HEAD` or `GET`.</p>
+   <p>A <a data-link-type="dfn" href="#resource-server" id="ref-for-resource-server⑤">resource server</a> MUST NOT send the <span>`<code><a data-link-type="http-header" href="#accept-events-header" id="ref-for-accept-events-header①⑥">Accept-Events</a></code>`</span> header field with `PREP` as a protocol in response to a request with any method other than `HEAD` or `GET`.</p>
    <p>For the <span class="title">Per Resource Events Protocol</span>, `GET` (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-9.3.1">§ 9.3.1 GET</a>) is the only method by which notifications are requested and for which notifications response is defined.</p>
    <p>An <a data-link-type="dfn" href="#application-client" id="ref-for-application-client⑤">application client</a> MUST NOT send the <span>`<code><a data-link-type="http-header" href="#accept-events-header" id="ref-for-accept-events-header①⑦">Accept-Events</a></code>`</span> header field with `PREP` as a protocol in a request with any method other than `GET`.</p>
    <p>An <a data-link-type="dfn" href="#resource-server" id="ref-for-resource-server⑥">resource server</a> MUST NOT send the <span>`<code><a data-link-type="http-header" href="#events-header" id="ref-for-events-header①②">Events</a></code>`</span> header field with the parameter `protocol` with a value of `PREP` in response to a request with any method other than `GET`.</p>
-   <p>A <a data-link-type="dfn" href="#resource-server" id="ref-for-resource-server⑦">Resource Server</a> MUST NOT send the <span>`<code><a data-link-type="http-header" href="#events-header" id="ref-for-events-header①③">Events</a></code>`</span> header field except in response to a `GET` request.</p>
+   <p>A <a data-link-type="dfn" href="#resource-server" id="ref-for-resource-server⑦">resource server</a> MUST NOT send the <span>`<code><a data-link-type="http-header" href="#events-header" id="ref-for-events-header①③">Events</a></code>`</span> header field except in response to a `GET` request.</p>
    <h3 class="heading settled" data-level="5.3" id="status-codes"><span class="secno">5.3. </span><span class="content">Status Codes</span><a class="self-link" href="#status-codes"></a></h3>
    <p>The <span class="title">Per Resource Events Protocol</span> reuses existing HTTP status codes (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-15">§ 15 Status Codes</a>) to describe the result of the request for notifications and the semantics of notifications in the response.</p>
    <p>In response to a request where <span>`<code><a data-link-type="http-header" href="#accept-events-header" id="ref-for-accept-events-header①⑧">Accept-Events</a></code>`</span> header field indicates `PREP` as the preferred protocol, a <a data-link-type="dfn" href="#resource-server" id="ref-for-resource-server⑧">resource server</a> that supports notifications using the <span class="title">Per Resource Events Protocol</span> MUST communicate the status code for the notifications response using the `status` parameter in the <span>`<code><a data-link-type="http-header" href="#events-header" id="ref-for-events-header①④">Events</a></code>`</span> header field.</p>
@@ -972,7 +972,7 @@ appear in all capitals, as shown here.</p>
        </ul>
      </ul>
     <li data-md>
-     <p>MAY include the `Last-Event-ID` header field (<a data-link-type="biblio" href="#biblio-eventsource" title="Server-Sent Events">[EVENTSOURCE]</a> <a href="https://html.spec.whatwg.org/multipage/server-sent-events.html#section-9.2.4">§ 9.2.4  The `Last-Event-ID` header</a>) requesting the <a data-link-type="dfn" href="#resource-server" id="ref-for-resource-server①⑦">Resource Server</a> to not send the <a data-link-type="dfn" href="#base-response" id="ref-for-base-response①">base response</a> body and resume notifications from the event occurring immediately after the one specified.</p>
+     <p>MAY include the `Last-Event-ID` header field (<a data-link-type="biblio" href="#biblio-eventsource" title="Server-Sent Events">[EVENTSOURCE]</a> <a href="https://html.spec.whatwg.org/multipage/server-sent-events.html#section-9.2.4">§ 9.2.4  The `Last-Event-ID` header</a>) requesting the <a data-link-type="dfn" href="#resource-server" id="ref-for-resource-server①⑦">resource server</a> to not send the <a data-link-type="dfn" href="#base-response" id="ref-for-base-response①">base response</a> body and resume notifications from the event occurring immediately after the one specified.</p>
    </ul>
    <div class="advisement">
     <div class="marker">Implementation Guidance</div>
@@ -1103,7 +1103,7 @@ appear in all capitals, as shown here.</p>
    </ul>
    <h3 class="heading settled" data-level="9.2" id="only-notifications-response"><span class="secno">9.2. </span><span class="content">Only Notifications</span><a class="self-link" href="#only-notifications-response"></a></h3>
    <p>An <a data-link-type="dfn" href="#application-client" id="ref-for-application-client①②">application client</a> requesting only notifications using the <span class="title">Per Resource Events Protocol</span> needs to explicitly opt out of receiving the <a data-link-type="dfn" href="#base-response" id="ref-for-base-response③">base response</a> as described in <a href="#request">§ 7 Request</a>.</p>
-   <p>A <a data-link-type="dfn" href="#resource-server" id="ref-for-resource-server③⓪">resource server</a> MUST NOT send the [<a data-link-type="dfn" href="#base-response" id="ref-for-base-response④">base response</a>], if the request for <span class="shortname">PREP</span> notifications includes the `Last-Event-ID` header field(<a data-link-type="biblio" href="#biblio-eventsource" title="Server-Sent Events">[EVENTSOURCE]</a> <a href="https://html.spec.whatwg.org/multipage/server-sent-events.html#section-9.2.4">§ 9.2.4 The `Last-Event-ID` header</a>) which matches the `Event-ID` of the last event on the resource.</p>
+   <p>A <a data-link-type="dfn" href="#resource-server" id="ref-for-resource-server③⓪">resource server</a> MUST NOT send the [<a data-link-type="dfn" href="#base-response" id="ref-for-base-response④">base response</a>], if the request for <span class="shortname">PREP</span> notifications includes the `Last-Event-ID` header field (<a data-link-type="biblio" href="#biblio-eventsource" title="Server-Sent Events">[EVENTSOURCE]</a> <a href="https://html.spec.whatwg.org/multipage/server-sent-events.html#section-9.2.4">§ 9.2.4 The `Last-Event-ID` header</a>) which matches the `Event-ID` of the last event on the resource.</p>
    <h4 class="heading settled" data-level="9.2.1" id="only-notifications-response-headers"><span class="secno">9.2.1. </span><span class="content">Headers</span><a class="self-link" href="#only-notifications-response-headers"></a></h4>
    <p>A <a data-link-type="dfn" href="#resource-server" id="ref-for-resource-server③①">resource server</a> that provides only notifications using the <span class="title">Per Resource Events Protocol</span> MUST include the `Vary` header field
 (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-12.5.5">§ 12.5.5 Vary</a>) with `Last-Event-ID` as one of the values.</p>
@@ -1228,7 +1228,7 @@ Content-Type: message/rfc822
    <p>A <a data-link-type="dfn" href="#resource-server" id="ref-for-resource-server③⑦">resource server</a> MUST end the notification response in any one of the following scenarios:</p>
    <ul>
     <li data-md>
-     <p>Once the time specified in the `Expires` parameter of the `Events` header field has elapsed.</p>
+     <p>Once the time specified in the `expires` parameter of the `Events` header field has elapsed.</p>
     <li data-md>
      <p>Immediately after sending a notification upon a `DELETE` request on the resource that results in a response with 200 (OK) (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-15.3.1">§ 15.3.1 200 OK</a>) or 204 (No Content) (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-15.3.5">§ 15.3.5 204 No Content</a>) status codes.</p>
    </ul>
@@ -1242,7 +1242,7 @@ Content-Type: message/rfc822
    <h3 class="heading settled" id="rfc822-request"><span class="content">Request</span><a class="self-link" href="#rfc822-request"></a></h3>
    <p>An <a data-link-type="dfn" href="#application-client" id="ref-for-application-client①⑦">application clients</a> MAY specify additional parameters to `message/rfc822` notification media-type in the `accept` <a data-link-type="dfn" href="#event-field" id="ref-for-event-field①④">event field</a> associated with the `PREP` list item in the <span>`<code><a data-link-type="http-header" href="#accept-events-header" id="ref-for-accept-events-header②⑥">accept-events</a></code>`</span> header field of the request.</p>
    <h3 class="heading settled" id="rfc822-generation"><span class="content">Generation</span><a class="self-link" href="#rfc822-generation"></a></h3>
-   <p>A <a data-link-type="dfn" href="#resource-server" id="ref-for-resource-server③⑨">resource servers</a> implementing the <span class="title">Per Resource Events Protocol</span> SHOULD send a notification to an <a data-link-type="dfn" href="#application-client" id="ref-for-application-client①⑧">application client</a> when a request with one of the following methods on a resource:</p>
+   <p>A <a data-link-type="dfn" href="#resource-server" id="ref-for-resource-server③⑨">resource server</a> implementing the <span class="title">Per Resource Events Protocol</span> SHOULD send a notification to an <a data-link-type="dfn" href="#application-client" id="ref-for-application-client①⑧">application client</a> when a request with one of the following methods on a resource:</p>
    <ul>
     <li data-md>
      <p>`POST` (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-9.3.3">§ 9.3.3 POST</a>),</p>
@@ -1262,7 +1262,7 @@ Content-Type: message/rfc822
     <li data-md>
      <p>`204 (No Content)` (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-15.3.5">§ 15.3.5 204 No Content</a>)</p>
    </ul>
-   <p>The notification MUST NOT be sent before the success response has been sent to the User Agent that initiated the request.</p>
+   <p>The notification MUST NOT be sent before the success response has been sent to the user agent that initiated the request.</p>
    <h3 class="heading settled" id="rfc822-headers"><span class="content">Headers</span><a class="self-link" href="#rfc822-headers"></a></h3>
    <p>A <a data-link-type="dfn" href="#resource-server" id="ref-for-resource-server④⓪">resource server</a> MUST include the following header fields in a `message/rfc822` formatted <span class="shortname">PREP</span> notification:</p>
    <dl>
@@ -1302,11 +1302,11 @@ ETag: "abc123"
 --random-boundary
 </pre>
    </div>
-   <p>A <a data-link-type="dfn" href="#resource-server" id="ref-for-resource-server④②">resource server</a> MUST include the following headers in a `message/rfc822` formatted <span class="shortname">PREP</span> notification when sent as a result of a `POST` request:</p>
+   <p>A <a data-link-type="dfn" href="#resource-server" id="ref-for-resource-server④②">resource server</a> MUST include the following headers in a `message/rfc822` formatted <span class="shortname">PREP</span> notification when sent as a result of a `POST` request that modifies another resource:</p>
    <dl>
     <dt data-md>`Content-Location`
     <dd data-md>
-     <p>identical to the `Content-Location` header field (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-8.7">§ 8.7 Content-Location</a>) when</p>
+     <p>identical to the `Content-Location` header field (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-8.7">§ 8.7 Content-Location</a>).</p>
    </dl>
    <div class="example" id="example-29d5a56e">
     <a class="self-link" href="#example-29d5a56e"></a> 
@@ -1333,13 +1333,13 @@ Content-Location: /foo
    <p>generate one of the following status codes:</p>
    <ul>
     <li data-md>
-     <p>`200 (OK)` (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-15.3.1">§ 15.3.1 200 OK</a>)</p>
+     <p>`200 (OK)` (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-15.3.1">§ 15.3.1 200 OK</a>),</p>
     <li data-md>
-     <p>`201 (Created)` (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-15.3.2">§ 15.3.2 201 Created</a>):</p>
+     <p>`201 (Created)` (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-15.3.2">§ 15.3.2 201 Created</a>),</p>
     <li data-md>
-     <p>`204 (No Content)` (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-15.3.5">§ 15.3.5 204 No Content</a>)</p>
+     <p>`204 (No Content)` (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-15.3.5">§ 15.3.5 204 No Content</a>).</p>
    </ul>
-   <p><a data-link-type="dfn" href="#resource-server" id="ref-for-resource-server④④">Resource Server</a> SHOULD send the <a data-link-type="dfn" href="#delta-representation" id="ref-for-delta-representation①">delta representation</a> in the content-type preferred by the client as specified by the <span>`<code><a data-link-type="http-header" href="#http-headerdef-delta" id="ref-for-http-headerdef-delta①">delta</a></code>`</span> parameter.</p>
+   <p>A <a data-link-type="dfn" href="#resource-server" id="ref-for-resource-server④④">resource server</a> SHOULD send the <a data-link-type="dfn" href="#delta-representation" id="ref-for-delta-representation①">delta representation</a> in the content-type preferred by the client as specified by the <span>`<code><a data-link-type="http-header" href="#http-headerdef-delta" id="ref-for-http-headerdef-delta①">delta</a></code>`</span> parameter.</p>
    <p></p>
    <div class="example" id="example-08349e2f">
     <a class="self-link" href="#example-08349e2f"></a> 
@@ -1491,8 +1491,6 @@ customElements.define('prep-http-tabs', class extends LitElement {
    <dd>B. Leiba. <a href="https://www.rfc-editor.org/rfc/rfc8174"><cite>Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words</cite></a>. May 2017. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a>
    <dt id="biblio-rfc822">[RFC822]
    <dd>P. Resnick, Ed.. <a href="https://www.rfc-editor.org/rfc/rfc5322"><cite>Internet Message Format</cite></a>. October 2008. Draft Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc5322">https://www.rfc-editor.org/rfc/rfc5322</a>
-   <dt id="biblio-rfc8941">[RFC8941]
-   <dd>M. Nottingham; P-H. Kamp. <a href="https://www.rfc-editor.org/rfc/rfc8941"><cite>Structured Field Values for HTTP</cite></a>. February 2021. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc8941">https://www.rfc-editor.org/rfc/rfc8941</a>
    <dt id="biblio-rfc9110">[RFC9110]
    <dd>R. Fielding, Ed.; M. Nottingham, Ed.; J. Reschke, Ed.. <a href="https://www.rfc-editor.org/rfc/rfc9110"><cite>HTTP Semantics</cite></a>. June 2022. Internet Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc9110">https://www.rfc-editor.org/rfc/rfc9110</a>
    <dt id="biblio-rfc9112">[RFC9112]
@@ -1500,7 +1498,7 @@ customElements.define('prep-http-tabs', class extends LitElement {
    <dt id="biblio-rfc9113">[RFC9113]
    <dd>M. Thomson, Ed.; C. Benfield, Ed.. <a href="https://www.rfc-editor.org/rfc/rfc9113"><cite>HTTP/2</cite></a>. June 2022. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc9113">https://www.rfc-editor.org/rfc/rfc9113</a>
    <dt id="biblio-structured-fields">[STRUCTURED-FIELDS]
-   <dd>Mark Nottingham; Poul-Henning Kamp. <a href="https://datatracker.ietf.org/doc/draft-ietf-httpbis-sfbis/02/"><cite>Structured Field Values for HTTP</cite></a>. Internet Draft. URL: <a href="https://datatracker.ietf.org/doc/draft-ietf-httpbis-sfbis/02/">https://datatracker.ietf.org/doc/draft-ietf-httpbis-sfbis/02/</a>
+   <dd>Mark Nottingham; Poul-Henning Kamp. <a href="https://datatracker.ietf.org/doc/draft-ietf-httpbis-sfbis/03/"><cite>Structured Field Values for HTTP</cite></a>. Internet Draft. URL: <a href="https://datatracker.ietf.org/doc/draft-ietf-httpbis-sfbis/03/">https://datatracker.ietf.org/doc/draft-ietf-httpbis-sfbis/03/</a>
   </dl>
   <h3 class="no-num no-ref heading settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
   <dl>
