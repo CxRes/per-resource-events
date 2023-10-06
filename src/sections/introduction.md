@@ -38,8 +38,8 @@ The [PROTOCOL] does not specify:
 
 + a specific authentication and authorization mechanism to be used with the [PROTOCOL]. Implementations are encouraged to use existing approaches for authentication and authorization.
 + representation and semantics for notifications.
-  + Implementations are free to use any media-type for notifications, which can be negotiated just like the content-type for the representation of the state of the resource.
-  + Implementations are also free to define additional semantics for a given media-type when used to transmit notifications using the [PROTOCOL]. As an appendix to this specification, we define additional semantics for the `message/rfc822` MIME type when used for [PREP] notifications.
+  + Implementations are free to use any media-type for notifications, which can be negotiated just like the content of the representation.
+  + Implementations are also free to define additional semantics for a given media-type, when used to transmit notifications using the [PROTOCOL]. As an appendix to this specification, we define additional semantics when using the `message/rfc822` media-type to transmit [PREP] notifications.
 
 ## Audience ## {#intended-audience}
 
