@@ -8,7 +8,7 @@
   <meta content="Bikeshed version 82ce88815, updated Thu Sep 7 16:33:55 2023 -0700" name="generator">
   <link href="https://cxres.github.io/per-resource-events/protocol" rel="canonical">
   <link href="https://www.w3.org/2008/site/images/star.png" rel="icon">
-  <meta content="9122fe59ba1f669bfdab914ebe1aa916293b570e" name="document-revision">
+  <meta content="c4eb71be36d684d0b4c89faa47b26869226ffffb" name="document-revision">
 <style>
   body {
     background-image: none;
@@ -25,6 +25,18 @@
   prep-http-tabs pre.include-code {
     margin: 0;
     padding: 0.5em 1em 0.25em;
+  }
+
+  table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin: 0 4px;
+  }
+
+  td, th {
+    border: 2px solid blue;
+    padding: 4px 8px;
+    vertical-align: top;
   }
 </style>
   <link href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.1.0/dist/themes/light.css" rel="stylesheet">
@@ -607,7 +619,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
  <body class="h-entry">
   <div class="head">
    <h1 class="p-name no-ref" id="title">Per Resource Events Protocol</h1>
-   <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">Editor’s Draft</a>, <time class="dt-updated" datetime="2023-10-06">6 October 2023</time></p>
+   <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">Editor’s Draft</a>, <time class="dt-updated" datetime="2023-10-09">9 October 2023</time></p>
    <details open>
     <summary>More details about this document</summary>
     <div data-fill-with="spec-metadata">
@@ -1242,26 +1254,20 @@ Content-Type: message/rfc822
    <h3 class="heading settled" id="rfc822-request"><span class="content">Request</span><a class="self-link" href="#rfc822-request"></a></h3>
    <p>An <a data-link-type="dfn" href="#application-client" id="ref-for-application-client①⑦">application clients</a> MAY specify additional parameters to `message/rfc822` notification media-type in the `accept` <a data-link-type="dfn" href="#event-field" id="ref-for-event-field①④">event field</a> associated with the `PREP` list item in the <span>`<code><a data-link-type="http-header" href="#accept-events-header" id="ref-for-accept-events-header②⑥">accept-events</a></code>`</span> header field of the request.</p>
    <h3 class="heading settled" id="rfc822-notification"><span class="content">Notification</span><a class="self-link" href="#rfc822-notification"></a></h3>
-   <p>A <a data-link-type="dfn" href="#resource-server" id="ref-for-resource-server③⑨">resource server</a> implementing the <span class="title">Per Resource Events Protocol</span> SHOULD send a notification to an <a data-link-type="dfn" href="#application-client" id="ref-for-application-client①⑧">application client</a> when a request with one of the following methods on a resource:</p>
-   <ul>
-    <li data-md>
-     <p>`POST` (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-9.3.3">§ 9.3.3 POST</a>),</p>
-    <li data-md>
-     <p>`PUT` (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-9.3.4">§ 9.3.4 PUT</a>),</p>
-    <li data-md>
-     <p>`PATCH` (<a data-link-type="biblio" href="#biblio-rfc5789" title="PATCH Method for HTTP">[RFC5789]</a>),</p>
-    <li data-md>
-     <p>`DELETE` (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-9.3.5">§.3.5 DELETE</a>).</p>
-   </ul>
-   <p>generates one of the following status codes:</p>
-   <ul>
-    <li data-md>
-     <p>`200 (OK)` (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-15.3.1">§ 15.3.1 200 OK</a>)</p>
-    <li data-md>
-     <p>`201 (Created)` (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-15.3.2">§ 15.3.2 201 Created</a>):</p>
-    <li data-md>
-     <p>`204 (No Content)` (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-15.3.5">§ 15.3.5 204 No Content</a>)</p>
-   </ul>
+   <p>A <a data-link-type="dfn" href="#resource-server" id="ref-for-resource-server③⑨">resource server</a> implementing the <span class="title">Per Resource Events Protocol</span> SHOULD send a notification to an <a data-link-type="dfn" href="#application-client" id="ref-for-application-client①⑧">application client</a> when a request with one of the following methods generates a response with any of the following status codes:</p>
+   <table>
+    <tbody>
+     <tr>
+      <th> Method 
+      <th> Status Code 
+     <tr>
+      <td> `PUT` (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-9.3.4">§ 9.3.4 PUT</a>) <br> `PATCH` (<a data-link-type="biblio" href="#biblio-rfc5789" title="PATCH Method for HTTP">[RFC5789]</a>) <br> `DELETE` (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-9.3.5">§.3.5 DELETE</a>) 
+      <td> `200 (OK)` (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-15.3.1">§ 15.3.1 200 OK</a>) <br> `204 (No Content)` (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-15.3.5">§ 15.3.5 204 No Content</a>) 
+     <tr>
+      <td> `POST` (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-9.3.3">§ 9.3.3 POST</a>) 
+      <td> `200 (OK)` (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-15.3.1">§ 15.3.1 200 OK</a>) <br> `204 (No Content)` (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-15.3.5">§ 15.3.5 204 No Content</a>) <br> `201 (Created)` (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-15.3.2">§ 15.3.2 201 Created</a>) <br> `205 (Reset Content)` (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-15.3.2">§ 15.3.2 205 Reset Content</a>) 
+   </table>
+    <br> 
    <p>The notification MUST NOT be sent before the success response has been sent to the user agent that initiated the request.</p>
    <h3 class="heading settled" id="rfc822-headers"><span class="content">Headers</span><a class="self-link" href="#rfc822-headers"></a></h3>
    <p>A <a data-link-type="dfn" href="#resource-server" id="ref-for-resource-server④⓪">resource server</a> MUST include the following header fields in a `message/rfc822` formatted <span class="shortname">PREP</span> notification:</p>
@@ -1325,25 +1331,15 @@ Content-Location: /foo
    <h3 class="heading settled" id="rfc822-body"><span class="content">Body</span><a class="self-link" href="#rfc822-body"></a></h3>
    <p>The body of a `message/rfc822` formatted <span class="shortname">PREP</span> notification might be used to provide a <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="delta-representation">delta representation</dfn>, the difference between the state of the representation before and after the most recent event on the resource.</p>
    <p>If the <a data-link-type="dfn" href="#application-client" id="ref-for-application-client①⑨">application client</a> does not specify <dfn class="dfn-paneled" data-dfn-type="http-header" data-export id="http-headerdef-delta">delta</dfn> parameter associated with a preferred notifications format of `message/rfc822` in the `accept` <a data-link-type="dfn" href="#event-field" id="ref-for-event-field①⑤">event field</a> of the <a href="#request">§ 7 Request</a> that results in `message/rfc822` formatted <span class="shortname">PREP</span> notifications, the notifications MUST NOT contain a body.</p>
-   <p>If the <a data-link-type="dfn" href="#application-client" id="ref-for-application-client②⓪">application client</a> specifies a (<span>`<code><a data-link-type="http-header" href="#http-headerdef-delta" id="ref-for-http-headerdef-delta">delta</a></code>`</span>) parameter associated with a preferred notifications format of `message/rfc822` in the `accept` <a data-link-type="dfn" href="#event-field" id="ref-for-event-field①⑥">event field</a> of the <a href="#request">§ 7 Request</a> that results in `message/rfc822` formatted <span class="shortname">PREP</span> notifications, a <a data-link-type="dfn" href="#resource-server" id="ref-for-resource-server④③">resource server</a> SHOULD send the <a data-link-type="dfn" href="#delta-representation" id="ref-for-delta-representation">delta representation</a> as the body of the notification when a request with one of the following methods on a resource:</p>
+   <p>If state of the resource is not modified as a result of an HTTP operation, the resulting notification MUST NOT contain a body.</p>
+   <p>If the <a data-link-type="dfn" href="#application-client" id="ref-for-application-client②⓪">application client</a> specifies a (<span>`<code><a data-link-type="http-header" href="#http-headerdef-delta" id="ref-for-http-headerdef-delta">delta</a></code>`</span>) parameter associated with a preferred notifications format of `message/rfc822` in the `accept` <a data-link-type="dfn" href="#event-field" id="ref-for-event-field①⑥">event field</a> of the <a href="#request">§ 7 Request</a> that results in `message/rfc822` formatted <span class="shortname">PREP</span> notifications, a <a data-link-type="dfn" href="#resource-server" id="ref-for-resource-server④③">resource server</a>:</p>
    <ul>
     <li data-md>
-     <p>`POST` (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-9.3.3">§ 9.3.3 POST</a>),</p>
+     <p>SHOULD send the <a data-link-type="dfn" href="#delta-representation" id="ref-for-delta-representation">delta representation</a> as the body of the notification generated upon a `PATCH` (<a data-link-type="biblio" href="#biblio-rfc5789" title="PATCH Method for HTTP">[RFC5789]</a>) operation.</p>
     <li data-md>
-     <p>`PUT` (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-9.3.4">§ 9.3.4 PUT</a>),</p>
-    <li data-md>
-     <p>`PATCH` (<a data-link-type="biblio" href="#biblio-rfc5789" title="PATCH Method for HTTP">[RFC5789]</a>),</p>
+     <p>MAY send the <a data-link-type="dfn" href="#delta-representation" id="ref-for-delta-representation①">delta representation</a> as the body of the notification generated upon a `PUT` (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-9.3.4">§ 9.3.4 PUT</a>) or a `POST` (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-9.3.3">§ 9.3.3 POST</a>) operation.</p>
    </ul>
-   <p>generate one of the following status codes:</p>
-   <ul>
-    <li data-md>
-     <p>`200 (OK)` (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-15.3.1">§ 15.3.1 200 OK</a>),</p>
-    <li data-md>
-     <p>`201 (Created)` (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-15.3.2">§ 15.3.2 201 Created</a>),</p>
-    <li data-md>
-     <p>`204 (No Content)` (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-15.3.5">§ 15.3.5 204 No Content</a>).</p>
-   </ul>
-   <p>A <a data-link-type="dfn" href="#resource-server" id="ref-for-resource-server④④">resource server</a> SHOULD send the <a data-link-type="dfn" href="#delta-representation" id="ref-for-delta-representation①">delta representation</a> in the content-type preferred by the client as specified by the <span>`<code><a data-link-type="http-header" href="#http-headerdef-delta" id="ref-for-http-headerdef-delta①">delta</a></code>`</span> parameter.</p>
+   <p>A <a data-link-type="dfn" href="#resource-server" id="ref-for-resource-server④④">resource server</a> SHOULD send the <a data-link-type="dfn" href="#delta-representation" id="ref-for-delta-representation②">delta representation</a> in the content-type preferred by the client as specified by the <span>`<code><a data-link-type="http-header" href="#http-headerdef-delta" id="ref-for-http-headerdef-delta①">delta</a></code>`</span> parameter.</p>
    <p></p>
    <div class="example" id="example-06ac823f">
     <a class="self-link" href="#example-06ac823f"></a> 
@@ -1682,7 +1678,7 @@ window.dfnpanelData['base-response'] = {"dfnID": "base-response", "url": "#base-
 window.dfnpanelData['event-field'] = {"dfnID": "event-field", "url": "#event-field", "dfnText": "Event Field", "refSections": [{"refs": [{"id": "ref-for-event-field"}, {"id": "ref-for-event-field\u2460"}, {"id": "ref-for-event-field\u2461"}, {"id": "ref-for-event-field\u2462"}], "title": "5.1. Event Fields"}, {"refs": [{"id": "ref-for-event-field\u2463"}], "title": "6.3. Available"}, {"refs": [{"id": "ref-for-event-field\u2464"}, {"id": "ref-for-event-field\u2465"}, {"id": "ref-for-event-field\u2466"}], "title": "7. Request"}, {"refs": [{"id": "ref-for-event-field\u2467"}, {"id": "ref-for-event-field\u2468"}], "title": "8.2. Error Response"}, {"refs": [{"id": "ref-for-event-field\u2460\u24ea"}, {"id": "ref-for-event-field\u2460\u2460"}], "title": "8.3. Notification Errors"}, {"refs": [{"id": "ref-for-event-field\u2460\u2461"}, {"id": "ref-for-event-field\u2460\u2462"}], "title": "9.1. Common Headers"}, {"refs": [{"id": "ref-for-event-field\u2460\u2463"}], "title": "Request"}, {"refs": [{"id": "ref-for-event-field\u2460\u2464"}, {"id": "ref-for-event-field\u2460\u2465"}], "title": "Body"}], "external": false};
 window.dfnpanelData['accept-events-header'] = {"dfnID": "accept-events-header", "url": "#accept-events-header", "dfnText": "4.1. \n  Accept-Events\n", "refSections": [{"refs": [{"id": "ref-for-accept-events-header"}], "title": "3. Terminology"}, {"refs": [{"id": "ref-for-accept-events-header"}, {"id": "ref-for-accept-events-header\u2460"}, {"id": "ref-for-accept-events-header\u2461"}, {"id": "ref-for-accept-events-header\u2462"}, {"id": "ref-for-accept-events-header\u2463"}, {"id": "ref-for-accept-events-header\u2464"}], "title": "4.1. \n  Accept-Events\n"}, {"refs": [{"id": "ref-for-accept-events-header\u2465"}, {"id": "ref-for-accept-events-header\u2466"}, {"id": "ref-for-accept-events-header\u2467"}, {"id": "ref-for-accept-events-header\u2468"}, {"id": "ref-for-accept-events-header\u2460\u24ea"}], "title": "4.1.1. Validity"}, {"refs": [{"id": "ref-for-accept-events-header\u2460\u2460"}], "title": "4.1.2. Syntax"}, {"refs": [{"id": "ref-for-accept-events-header\u2460\u2461"}, {"id": "ref-for-accept-events-header\u2460\u2462"}], "title": "4.2. \n  Events\n"}, {"refs": [{"id": "ref-for-accept-events-header\u2460\u2463"}], "title": "4.2.1. Validity"}, {"refs": [{"id": "ref-for-accept-events-header\u2460\u2464"}], "title": "5.1. Event Fields"}, {"refs": [{"id": "ref-for-accept-events-header\u2460\u2465"}, {"id": "ref-for-accept-events-header\u2460\u2466"}], "title": "5.2. Methods"}, {"refs": [{"id": "ref-for-accept-events-header\u2460\u2467"}], "title": "5.3. Status Codes"}, {"refs": [{"id": "ref-for-accept-events-header\u2460\u2468"}], "title": "6.2. Not Available"}, {"refs": [{"id": "ref-for-accept-events-header\u2461\u24ea"}], "title": "6.3. Available"}, {"refs": [{"id": "ref-for-accept-events-header\u2461\u2460"}, {"id": "ref-for-accept-events-header\u2461\u2461"}], "title": "7. Request"}, {"refs": [{"id": "ref-for-accept-events-header\u2461\u2462"}], "title": "8.1. Not Available"}, {"refs": [{"id": "ref-for-accept-events-header\u2461\u2463"}, {"id": "ref-for-accept-events-header\u2461\u2464"}], "title": "9.1. Common Headers"}, {"refs": [{"id": "ref-for-accept-events-header\u2461\u2465"}], "title": "Request"}], "external": false};
 window.dfnpanelData['events-header'] = {"dfnID": "events-header", "url": "#events-header", "dfnText": "4.2. \n  Events\n", "refSections": [{"refs": [{"id": "ref-for-events-header"}], "title": "3. Terminology"}, {"refs": [{"id": "ref-for-events-header"}, {"id": "ref-for-events-header\u2460"}, {"id": "ref-for-events-header\u2461"}, {"id": "ref-for-events-header\u2462"}], "title": "4.2. \n  Events\n"}, {"refs": [{"id": "ref-for-events-header\u2463"}, {"id": "ref-for-events-header\u2464"}, {"id": "ref-for-events-header\u2465"}, {"id": "ref-for-events-header\u2466"}, {"id": "ref-for-events-header\u2467"}, {"id": "ref-for-events-header\u2468"}], "title": "4.2.1. Validity"}, {"refs": [{"id": "ref-for-events-header\u2460\u24ea"}], "title": "4.2.2. Syntax"}, {"refs": [{"id": "ref-for-events-header\u2460\u2460"}], "title": "5.1. Event Fields"}, {"refs": [{"id": "ref-for-events-header\u2460\u2461"}, {"id": "ref-for-events-header\u2460\u2462"}], "title": "5.2. Methods"}, {"refs": [{"id": "ref-for-events-header\u2460\u2463"}, {"id": "ref-for-events-header\u2460\u2464"}], "title": "5.3. Status Codes"}, {"refs": [{"id": "ref-for-events-header\u2460\u2465"}], "title": "8.1. Not Available"}, {"refs": [{"id": "ref-for-events-header\u2460\u2466"}], "title": "8.2. Error Response"}, {"refs": [{"id": "ref-for-events-header\u2460\u2467"}], "title": "8.3. Notification Errors"}, {"refs": [{"id": "ref-for-events-header\u2460\u2468"}], "title": "9.1. Common Headers"}], "external": false};
-window.dfnpanelData['delta-representation'] = {"dfnID": "delta-representation", "url": "#delta-representation", "dfnText": "delta representation", "refSections": [{"refs": [{"id": "ref-for-delta-representation"}, {"id": "ref-for-delta-representation\u2460"}], "title": "Body"}], "external": false};
+window.dfnpanelData['delta-representation'] = {"dfnID": "delta-representation", "url": "#delta-representation", "dfnText": "delta representation", "refSections": [{"refs": [{"id": "ref-for-delta-representation"}, {"id": "ref-for-delta-representation\u2460"}, {"id": "ref-for-delta-representation\u2461"}], "title": "Body"}], "external": false};
 window.dfnpanelData['http-headerdef-delta'] = {"dfnID": "http-headerdef-delta", "url": "#http-headerdef-delta", "dfnText": "delta", "refSections": [{"refs": [{"id": "ref-for-http-headerdef-delta"}, {"id": "ref-for-http-headerdef-delta\u2460"}], "title": "Body"}], "external": false};
 </script>
 <script>/* Boilerplate: script-dom-helper */
