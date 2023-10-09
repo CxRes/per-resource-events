@@ -31,6 +31,7 @@ Status Text:
 
 <style>
   body {
+    counter-reset: tables;
     background-image: none;
   }
 
@@ -45,6 +46,35 @@ Status Text:
   prep-http-tabs pre.include-code {
     margin: 0;
     padding: 0.5em 1em 0.25em;
+  }
+
+  table {
+    border: 6px double black;
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin: 0 4px;
+  }
+
+  table.numbered {
+    counter-increment: tables;
+  }
+
+  table.numbered > caption::before {
+    content: "Table " counter(tables) ": ";
+    font-weight: 700;
+    padding: 2px 0;
+  }
+
+  th, td {
+    border: 2px solid;
+    padding: 4px 8px;
+    vertical-align: top;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    table {
+      border-color: white;
+    }
   }
 </style>
 
