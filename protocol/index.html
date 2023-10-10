@@ -8,9 +8,11 @@
   <meta content="Bikeshed version 82ce88815, updated Thu Sep 7 16:33:55 2023 -0700" name="generator">
   <link href="https://cxres.github.io/per-resource-events/protocol" rel="canonical">
   <link href="https://www.w3.org/2008/site/images/star.png" rel="icon">
-  <meta content="99ccca93a2af3b80a67e8ff21fcc90cdb809b87c" name="document-revision">
+  <meta content="ab4f2b15a405a619b0f714e1e3a9b7992f362d17" name="document-revision">
 <style>
+
   body {
+    counter-reset: tables;
     background-image: none;
   }
 
@@ -28,15 +30,32 @@
   }
 
   table {
+    border: 6px double black;
     table-layout: fixed;
     border-collapse: collapse;
     margin: 0 4px;
   }
 
-  td, th {
-    border: 2px solid blue;
+  table.numbered {
+    counter-increment: tables;
+  }
+
+  table.numbered > caption::before {
+    content: "Table " counter(tables) ": ";
+    font-weight: 700;
+    padding: 2px 0;
+  }
+
+  th, td {
+    border: 2px solid;
     padding: 4px 8px;
     vertical-align: top;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    table {
+      border-color: white;
+    }
   }
 </style>
   <link href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.1.0/dist/themes/light.css" rel="stylesheet">
@@ -1255,11 +1274,12 @@ Content-Type: message/rfc822
    <p>An <a data-link-type="dfn" href="#application-client" id="ref-for-application-client①⑦">application clients</a> MAY specify additional parameters to `message/rfc822` notification media-type in the `accept` <a data-link-type="dfn" href="#event-field" id="ref-for-event-field①④">event field</a> associated with the `PREP` list item in the <span>`<code><a data-link-type="http-header" href="#accept-events-header" id="ref-for-accept-events-header②⑥">accept-events</a></code>`</span> header field of the request.</p>
    <h3 class="heading settled" id="rfc822-notification"><span class="content">Notification</span><a class="self-link" href="#rfc822-notification"></a></h3>
    <p>A <a data-link-type="dfn" href="#resource-server" id="ref-for-resource-server③⑨">resource server</a> implementing the <span class="title">Per Resource Events Protocol</span> SHOULD send a notification to an <a data-link-type="dfn" href="#application-client" id="ref-for-application-client①⑧">application client</a> when a request with one of the following methods generates a response with any of the following status codes:</p>
-   <table>
+   <table class="numbered">
+    <caption>Notification Triggers </caption>
     <tbody>
      <tr>
-      <th> Method 
-      <th> Status Code 
+      <th> Request Method 
+      <th> Response Status 
      <tr>
       <td> `PUT` (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-9.3.4">§ 9.3.4 PUT</a>) <br> `PATCH` (<a data-link-type="biblio" href="#biblio-rfc5789" title="PATCH Method for HTTP">[RFC5789]</a>) <br> `DELETE` (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-9.3.5">§.3.5 DELETE</a>) 
       <td> `200 (OK)` (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-15.3.1">§ 15.3.1 200 OK</a>) <br> `204 (No Content)` (<a data-link-type="biblio" href="#biblio-rfc9110" title="HTTP Semantics">[RFC9110]</a> <a href="https://www.rfc-editor.org/rfc/rfc9110#section-15.3.5">§ 15.3.5 204 No Content</a>) 
